@@ -25,6 +25,10 @@ for(int i = 0; i < headers.length; i++){
     }
 }
 
+    //convert list to array             
+    String[] headerArray = new String[headersWithoutRootHeader.size()];
+    headerArray = headersWithoutRootHeader.toArray(new String[headerArray.length]);
+
     //find out how many children the rootnode will have 
     int sizeOfSet = data.size();
    
@@ -67,9 +71,7 @@ for(int i = 0; i < headers.length; i++){
                     System.out.println(Arrays.toString(strings));
                 }
 
-                //convert list to array             
-                String[] headerArray = new String[headersWithoutRootHeader.size()];
-                headerArray = headersWithoutRootHeader.toArray(new String[headerArray.length]);
+                
 
                 String x = evaluateAttributesForSplit(headerArray, dataSub);
                 System.out.println(x);
