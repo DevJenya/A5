@@ -5,6 +5,7 @@ public class DTNode {
     String nodeName = null;
     Boolean isThisALeafNode = false;
     DTNode parentNode = null;
+    int numberOfChildren = 0;
 
     List<DTNode> childrenOfTheNode = new ArrayList<>();
 
@@ -15,9 +16,14 @@ public class DTNode {
 
     public void addChild(String childName){
         childrenOfTheNode.add(new DTNode(childName, this));
+        numberOfChildren++;
     }
 
     public DTNode getParent(){
         return parentNode;
+    }
+
+    public DTNode getChildOfValue(){
+            return childrenOfTheNode.get(0); 
     }
 }
